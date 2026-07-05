@@ -27,7 +27,7 @@ namespace E_Commerce_System.Models
 
         [Required]
         [Range(1,1999)]
-        public int Quantity { get; set; } //calculated
+        public int Quantity { get; set; } // calculated
 
 
         //Reationship with Product (many-one)
