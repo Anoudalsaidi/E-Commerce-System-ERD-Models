@@ -25,7 +25,7 @@ namespace E_Commerce_System.Models
         public string? description { get; set; } //user input
 
         [MaxLength(300)]
-        public string? imageUrl { get; set; } // user input
+        public string? imageUrl { get; set; } //user input
 
 
         //Reationship with Product (one-many)
