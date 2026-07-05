@@ -22,7 +22,7 @@ namespace E_Commerce_System.Models
 
        
         [MaxLength(500)]
-        public string? description { get; set; } // user input
+        public string? description { get; set; } //user input
 
         [MaxLength(300)]
         public string? imageUrl { get; set; } // user input
