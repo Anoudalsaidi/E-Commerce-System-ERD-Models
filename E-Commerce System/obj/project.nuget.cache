@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A/4aY0fYUFA=",
+  "dgSpecHash": "+6QPmV/7acc=",
   "success": true,
   "projectFilePath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
   "expectedPackageFiles": [
@@ -81,8 +81,8 @@
     "C:\\Users\\anoud\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\anoud\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\anoud\\.nuget\\packages\\unitofwork.entityframeworkcore\\8.0.6\\unitofwork.entityframeworkcore.8.0.6.nupkg.sha512",
-    "C:\\Users\\anoud\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.26\\microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
     "C:\\Users\\anoud\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.26\\microsoft.windowsdesktop.app.ref.8.0.26.nupkg.sha512",
+    "C:\\Users\\anoud\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.26\\microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
     "C:\\Users\\anoud\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.26\\microsoft.aspnetcore.app.ref.8.0.26.nupkg.sha512",
     "C:\\Users\\anoud\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.26\\microsoft.netcore.app.host.win-x64.8.0.26.nupkg.sha512"
   ],

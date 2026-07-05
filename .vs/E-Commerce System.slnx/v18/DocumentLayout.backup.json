@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|c:\\users\\anoud\\onedrive\\desktop\\backend\\e-commerce system erd \u0026 models\\e-commerce system\\e-commerce system\\migrations\\20260705064744_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|solutionrelative:e-commerce system\\migrations\\20260705064744_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|c:\\users\\anoud\\onedrive\\desktop\\backend\\e-commerce system erd \u0026 models\\e-commerce system\\e-commerce system\\e_commercecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|solutionrelative:e-commerce system\\e_commercecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|c:\\users\\anoud\\onedrive\\desktop\\backend\\e-commerce system erd \u0026 models\\e-commerce system\\e-commerce system\\e-commerce system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|solutionrelative:e-commerce system\\e-commerce system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|c:\\users\\anoud\\onedrive\\desktop\\backend\\e-commerce system erd \u0026 models\\e-commerce system\\e-commerce system\\migrations\\20260705064744_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|solutionrelative:e-commerce system\\migrations\\20260705064744_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1807B03-F323-E392-AFA9-6D22C1195223}|E-Commerce System\\E-Commerce System.csproj|c:\\users\\anoud\\onedrive\\desktop\\backend\\e-commerce system erd \u0026 models\\e-commerce system\\e-commerce system\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "20260705064744_initialcreate.cs",
               "DocumentMoniker": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\E-Commerce System\\Migrations\\20260705064744_initialcreate.cs",
               "RelativeDocumentMoniker": "E-Commerce System\\Migrations\\20260705064744_initialcreate.cs",
               "ToolTip": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\E-Commerce System\\Migrations\\20260705064744_initialcreate.cs",
               "RelativeToolTip": "E-Commerce System\\Migrations\\20260705064744_initialcreate.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-05T06:47:44.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "E-Commerce System",
               "DocumentMoniker": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
               "RelativeDocumentMoniker": "E-Commerce System\\E-Commerce System.csproj",
@@ -80,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "E_CommerceContext.cs",
               "DocumentMoniker": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\E-Commerce System\\E_CommerceContext.cs",
               "RelativeDocumentMoniker": "E-Commerce System\\E_CommerceContext.cs",
-              "ToolTip": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\E-Commerce System\\E_CommerceContext.cs*",
-              "RelativeToolTip": "E-Commerce System\\E_CommerceContext.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBgAAABuAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD \u0026 Models\\E-Commerce System\\E-Commerce System\\E_CommerceContext.cs",
+              "RelativeToolTip": "E-Commerce System\\E_CommerceContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-05T06:18:53.408Z",
               "EditorCaption": ""

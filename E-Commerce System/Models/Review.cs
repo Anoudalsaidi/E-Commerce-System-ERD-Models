@@ -34,7 +34,7 @@ namespace E_Commerce_System.Models
         public string? comment { get; set; } //user input
 
         [Required]
-        public DateTime reviewDate { get; set; } //user input
+        public DateTime reviewDate { get; set; } // user input
 
         //Reationship with User (many-one)
         public User user { get; set; }
