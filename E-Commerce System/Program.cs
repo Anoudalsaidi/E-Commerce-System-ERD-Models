@@ -1,10 +1,17 @@
-﻿namespace E_Commerce_System
+﻿using Microsoft.Identity.Client;
+
+namespace E_Commerce_System
 {
-    internal class Program
+   public class Program
     {
+        public static E_CommerceContextb Context = new E_CommerceContextb();
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            Console.WriteLine("E_Commerce_System");
+
+           
+            
         }
     }
 }

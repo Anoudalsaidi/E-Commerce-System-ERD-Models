@@ -26,7 +26,8 @@ namespace E_Commerce_System.Models
 
 
         [Required]
-        [Range(typeof(decimal), "0", "79228162514264337593543950335")] // this answer i git it from AI
+        [Column(TypeName = "decimal(10,2)")]
+        [Range(0.01, double.MaxValue)]// this answer i git it from AI
         public decimal price { get; set; } //calculated
 
         [Required]
