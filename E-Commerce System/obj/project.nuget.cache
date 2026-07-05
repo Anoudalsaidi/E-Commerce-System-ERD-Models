@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JHHhX03Nxyo=",
+  "dgSpecHash": "fONsNwkTvwc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\University Management System\\University Management System\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
+  "projectFilePath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anoud\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.26\\microsoft.windowsdesktop.app.ref.8.0.26.nupkg.sha512",
     "C:\\Users\\anoud\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.26\\microsoft.netcore.app.ref.8.0.26.nupkg.sha512",

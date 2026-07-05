@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\University Management System\\University Management System\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
+      "projectUniqueName": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
       "projectName": "E-Commerce System",
-      "projectPath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\University Management System\\University Management System\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
+      "projectPath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\E-Commerce System.csproj",
       "packagesPath": "C:\\Users\\anoud\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\University Management System\\University Management System\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\obj\\",
+      "outputPath": "C:\\Users\\anoud\\OneDrive\\Desktop\\BackEnd\\E-Commerce System ERD & Models\\E-Commerce System\\E-Commerce System\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

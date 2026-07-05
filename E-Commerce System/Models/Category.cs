@@ -18,7 +18,7 @@ namespace E_Commerce_System.Models
 
         [Required]
         [MaxLength(100)]
-        public string categoryName { get; set; } // user input
+        public string categoryName { get; set; } //user input
 
        
         [MaxLength(500)]
