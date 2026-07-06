@@ -28,12 +28,13 @@ namespace E_Commerce_System.Models
         [Required]
         [Column(TypeName ="decimal(10,2)")]
         [Range(0.01,double.MaxValue)] // this answer i git it from AI
-        public decimal totalAmount { get; set; } //calculated
+        public decimal totalAmount { get; set; }    // calculated — sum of (price * quantity) for all order items
+
 
 
         [Required]
         [MaxLength(30)]
-        public string status { get; set; } = "Pending";// Default value
+        public string status { get; set; } = "Pending";  // default value — "Pending" | "Processing" | "Shipped" | "Delivered" | "Cancelled"
 
 
         [Required]
@@ -43,7 +44,7 @@ namespace E_Commerce_System.Models
 
         [Required]
         [MaxLength(50)]
-        public string paymentMethod { get; set; } //user input
+        public string paymentMethod { get; set; }   // from list — "CreditCard" | "DebitCard" | "PayPal" | "Cash"
 
 
         //Reationship with Product (many-one)

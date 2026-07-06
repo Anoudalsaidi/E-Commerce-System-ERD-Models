@@ -150,7 +150,43 @@ namespace E_Commerce_System
 
         }
 
+        //case 4
 
+        public static void PlaceOrder()
+        {
+            //creat order
+            Console.WriteLine("-- User Order --");
+            Console.WriteLine("enter shipping Address :");
+            string address = Console.ReadLine();
+
+            Console.WriteLine("Enter user ID :");
+            int userid = int.Parse(Console.ReadLine());
+           
+            //check input 
+            User selectuserid = Context.users.FirstOrDefault(u => u.userId == userid);
+
+            if(selectuserid == null)
+            {
+                Console.WriteLine("this user ID No match ");
+                return;
+            }
+
+
+            Console.WriteLine("select mathed Payment :");
+            Console.WriteLine("A- CreditCard");
+            Console.WriteLine("B- DebitCard");
+            Console.WriteLine("C- PayPal");
+            Console.WriteLine("D- Cash");
+            string option = Console.ReadLine();
+
+            Order orderuser = new Order
+            {
+                userId = userid,
+                orderDate = DateTime.Now,
+                totalAmount = orderuser.totalAmount,
+
+            };
+        }
 
 
 
