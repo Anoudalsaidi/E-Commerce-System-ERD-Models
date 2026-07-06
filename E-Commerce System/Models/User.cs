@@ -56,10 +56,10 @@ namespace E_Commerce_System.Models
 
 
         //Reationship with Order (one-many)
-        public List<Order> Places { get; set; }
+        public virtual List<Order> Places { get; set; }
 
         //Reationship with Review (one-many)
-        public List<Review> Writes { get; set; }
+        public virtual List<Review> Writes { get; set; }
 
     }
 }

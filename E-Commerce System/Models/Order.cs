@@ -47,13 +47,13 @@ namespace E_Commerce_System.Models
 
 
         //Reationship with Product (many-one)
-        public List<Product> products { get; set; }
+        public virtual List<Product> products { get; set; }
 
         //Reationship with User (many-one)
-        public User user { get; set; }
+        public virtual User user { get; set; }
 
         //Reationship with OrderDetail (one-many)
-        public List<OrderDetail> orderDetails { get; set; }
+        public virtual List<OrderDetail> orderDetails { get; set; }
 
     }
 }

@@ -29,7 +29,7 @@ namespace E_Commerce_System.Models
 
 
         //Reationship with Product (one-many)
-        public List<Product> products { get; set; }
+        public virtual List<Product> products { get; set; }
 
     }
 }

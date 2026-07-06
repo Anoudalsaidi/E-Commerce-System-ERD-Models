@@ -31,10 +31,10 @@ namespace E_Commerce_System.Models
 
 
         //Reationship with Product (many-one)
-        public Product products { get; set; }
+        public virtual Product products { get; set; }
 
 
         //Reationship with Order (many-one)
-        public Order orders { get; set; }
+        public virtual Order orders { get; set; }
     }
 }
