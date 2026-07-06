@@ -49,8 +49,30 @@ namespace E_Commerce_System
             Context.SaveChanges();
             Console.WriteLine($"User ID:{registeruser.userId}");
         }
-
         //case 2
+        public static void AddCategory()
+        {
+            Console.WriteLine("Enter category Name:");
+            string categoryName = Console.ReadLine();
+
+            Console.WriteLine("Enter category description:");
+            string description = Console.ReadLine();
+
+            Console.WriteLine("Enter image Url:");
+            string imageUrl = Console.ReadLine();
+
+            Category category = new Category
+            {
+                categoryName=categoryName,
+                description=description,
+                imageUrl=imageUrl
+            };
+
+            Context.categories.Add(category);
+            Context.SaveChanges();
+            Console.WriteLine($"category ID : {category.categoryId}");
+        }
+        //case 3
         public static void AddNewProducttoCategory()
         {
             //add product
@@ -70,7 +92,7 @@ namespace E_Commerce_System
             Console.WriteLine("Enter image Url:");
             string imageUrl = Console.ReadLine();
 
-            Product product = new Product
+            Product produc = new Product
             {
                 productName=productName,
                 description=description,
@@ -80,11 +102,50 @@ namespace E_Commerce_System
                 createdAt=DateTime.Now,
                 isAvailable =true
             };
-            Context.products.Add(product);
+            Context.products.Add(produc);
             Context.SaveChanges();
-            Console.WriteLine($"Product ID : {product.productId}  ");
+            Console.WriteLine($"Product ID : {produc.productId}  ");
             //----------------------------
 
+            //assigened product id to category
+
+            //show  All categories
+            List<Category> categories = Context.categories.ToList();
+
+            foreach(Category categs in categories)
+            {
+                Console.WriteLine($"Category ID:{categs.categoryId} | Category Name: {categs.categoryName}");
+            }
+
+            // select Category
+            Console.WriteLine("Enter selected Category ID: ");
+            int userCategory = int.Parse(Console.ReadLine());
+
+            //check input
+            Category category = Context.categories.FirstOrDefault(c => c.categoryId == userCategory);
+
+            if(category == null) 
+            {
+                Console.WriteLine("this ID No match with any Category ");
+                return;
+            }
+
+            //add product
+            Product product = new Product();
+
+            Console.WriteLine("enter product name: ");
+            string productname = Console.ReadLine();
+
+
+            Console.WriteLine("enter product price: ");
+            decimal productprice = decimal.Parse(Console.ReadLine());
+
+            //assiged Category
+            product.categoryId = category.categoryId;
+
+            Context.products.Add(product);
+            Context.SaveChanges();
+            Console.WriteLine("product added successfuly");
 
 
         }
