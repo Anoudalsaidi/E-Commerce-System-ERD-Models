@@ -153,7 +153,6 @@ namespace E_Commerce_System
         }
 
         //case 4
-
         public static void PlaceOrder()
         {
             //creat order
@@ -266,13 +265,88 @@ namespace E_Commerce_System
 
         }
 
+        //case 4
+        public static void ProductReview()
+        {
+            //Display user & product 
+            foreach(User u in Context.users)
+            {
+                Console.WriteLine("All User Available ");
+                Console.WriteLine($"User ID : {u.userId} | User Name : {u.username}");
+
+            }
+
+            foreach(Product p in Context.products)
+            {
+                Console.WriteLine("All product Avialable ");
+                Console.WriteLine($"Product ID : {p.productId} | product Name : {p.productName}");
+            }
+
+            //Input user id product id
+            Console.WriteLine("Enter user ID :");
+            int userid = int.Parse(Console.ReadLine());
+
+            //check input
+            User checkuserid = Context.users.FirstOrDefault(u => u.userId == userid);
+
+            if(checkuserid == null)
+            {
+                Console.WriteLine("No match with this user ID");
+                return;
+            }
+
+
+            Console.WriteLine("Enter product ID :");
+            int productid = int.Parse(Console.ReadLine());
+
+            //check product
+            Product checkproductid = Context.products.FirstOrDefault(p=> p.productId==productid);
+
+            if (checkproductid == null)
+            {
+                Console.WriteLine("No match with this Product ID");
+                return;
+            }
+
+            //input Review
+            Console.WriteLine("Enter your comment :");
+            string usercomment = Console.ReadLine();
+
+            Console.WriteLine("Enter Product Rating ");
+            int userrat = int.Parse(Console.ReadLine());
+
+            //check range rating
+            if(userrat != 1 - 5)
+            {
+                Console.WriteLine("Rating out of the Range");
+                return;
+            }
+
+            Review userreviews = new Review()
+            {
+                userId=userid,
+                productId=productid,
+                comment=usercomment,
+                rating=userrat,
+                reviewDate=DateTime.Now
+            };
+
+            Context.reviews.Add(userreviews);
+            Context.SaveChanges();
+            Console.WriteLine($" User Review added successfully with Review ID : {userreviews.reviewId}");
+
+        }
+
+        //case 5
+        public static void UpdateProductPriceandAvailability() { }
 
 
 
 
 
 
-            static void Main(string[] args)
+
+        static void Main(string[] args)
         {
 
             bool flag = false;
