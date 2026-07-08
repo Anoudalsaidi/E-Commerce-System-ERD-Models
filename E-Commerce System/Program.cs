@@ -338,7 +338,10 @@ namespace E_Commerce_System
         }
 
         //case 5
-        public static void UpdateProductPriceandAvailability() { }
+        public static void UpdateProductPriceandAvailability() 
+        {
+
+        }
 
 
 
@@ -385,8 +388,10 @@ namespace E_Commerce_System
                         PlaceOrder();
                         break;
                     case 5:
+                        ProductReview();
                         break;
                     case 6:
+
                         break;
                     case 7:
                         break;
