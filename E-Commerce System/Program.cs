@@ -9,7 +9,7 @@ namespace E_Commerce_System
 {
    public class Program
     {
-        //object of Context
+        //object of Context class
         public static E_CommerceContextb Context = new E_CommerceContextb();
 
         //case 1
