@@ -51,7 +51,7 @@ namespace E_Commerce_System
 
             Context.users.Add(registeruser);
             Context.SaveChanges();
-            Console.WriteLine($"User ID:{registeruser.userId}");
+            Console.WriteLine($"User Added Successfully with ID:{registeruser.userId}");
         }
         //case 2
         public static void AddCategory()
@@ -96,21 +96,7 @@ namespace E_Commerce_System
             Console.WriteLine("Enter image Url:");
             string imageUrl = Console.ReadLine();
 
-            Product produc = new Product
-            {
-                productName=productName,
-                description=description,
-                price=price,
-                stockQuantity=stockQuantity,
-                imageUrl=imageUrl,
-                createdAt=DateTime.Now,
-                isAvailable =true
-            };
-            Context.products.Add(produc);
-            Context.SaveChanges();
-            Console.WriteLine($"Product ID : {produc.productId}  ");
-            //----------------------------
-
+         
             //assigened product id to category
 
             //show  All categories
@@ -134,24 +120,22 @@ namespace E_Commerce_System
                 return;
             }
 
-            //add product
-            Product product = new Product();
 
-            Console.WriteLine("enter product name: ");
-            string productname = Console.ReadLine();
-
-
-            Console.WriteLine("enter product price: ");
-            decimal productprice = decimal.Parse(Console.ReadLine());
-
-            //assiged Category
-            product.categoryId = category.categoryId;
+            Product product = new Product()
+            {
+                productName = productName,
+                description = description,
+                price = price,
+                stockQuantity = stockQuantity,
+                imageUrl = imageUrl,
+                categoryId = category.categoryId,
+                createdAt = DateTime.Now,
+                isAvailable = true
+            };
 
             Context.products.Add(product);
             Context.SaveChanges();
-            Console.WriteLine("product added successfuly");
-
-
+            Console.WriteLine($"Product added successfully with ID: {product.productId}");
         }
 
         //case 4
