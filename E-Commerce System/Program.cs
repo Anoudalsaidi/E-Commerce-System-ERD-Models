@@ -421,7 +421,29 @@ namespace E_Commerce_System
 
         }
 
+        //case 7
+        public static void DeleteReview()
+        {
+            Console.WriteLine("Enter Review id ");
+            int reviewid = int.Parse(Console.ReadLine());
 
+        
+            Review userreview = Context.reviews.FirstOrDefault(r => r.reviewId == reviewid);
+       
+            if(userreview == null)
+            {
+                Console.WriteLine("Review ID Not Found");
+                return;
+                
+            }
+
+            Context.reviews.Remove(userreview);
+            Context.SaveChanges();
+            Console.WriteLine("Review Delted Successfully");
+
+
+
+        }
 
 
 
@@ -473,6 +495,7 @@ namespace E_Commerce_System
                         CancelOrder();
                         break;
                     case 8:
+                        DeleteReview();
                         break;
                     case 9:
                         break;
