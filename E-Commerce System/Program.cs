@@ -108,7 +108,7 @@ namespace E_Commerce_System
             }
 
             // select Category
-            Console.WriteLine("Enter selected Category ID: ");
+            Console.WriteLine("\n Enter selected Category ID: ");
             int userCategory = int.Parse(Console.ReadLine());
 
             //check input
