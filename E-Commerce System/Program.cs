@@ -340,7 +340,50 @@ namespace E_Commerce_System
         //case 5
         public static void UpdateProductPriceandAvailability() 
         {
+            Console.WriteLine("Enter Product ID :");
+            int productid = int.Parse(Console.ReadLine());
 
+            Product updateproduct = Context.products.FirstOrDefault(p => p.productId == productid);
+            
+            if(updateproduct == null)
+            {
+                Console.WriteLine("product id not found");
+                return;
+            }
+
+            //add new price
+            Console.WriteLine("Enter new price ");
+            decimal newprice = decimal.Parse(Console.ReadLine());
+
+            if (newprice == null)
+            {
+                Console.WriteLine("No price added");
+                return;
+            }
+ 
+            updateproduct.price = newprice;
+            
+            
+            //adding availablity
+            Console.WriteLine("Is product available? (T/F) ?");
+            bool productavialable = bool.Parse(Console.ReadLine());
+
+            updateproduct.isAvailable = productavialable;
+
+            
+           
+            Context.SaveChanges();
+            Console.WriteLine("Product Updated successfully ");
+
+
+
+            
+
+            //foreach(OrderDetail o in Context.orderDetails)
+            //{
+            //    Console.WriteLine("Order Details : ");
+            //    Console.WriteLine($"o");
+            //}
         }
 
 
@@ -391,7 +434,7 @@ namespace E_Commerce_System
                         ProductReview();
                         break;
                     case 6:
-
+                        UpdateProductPriceandAvailability();
                         break;
                     case 7:
                         break;
