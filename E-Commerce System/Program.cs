@@ -1,6 +1,7 @@
 ﻿using E_Commerce_System.Models;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Identity.Client;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace E_Commerce_System
@@ -445,7 +446,7 @@ namespace E_Commerce_System
 
         }
 
-        //case 7
+        //case 8
         public static void ViewAllProducts()
         {
             List<Product> allproduct = Context.products.ToList();
@@ -466,6 +467,49 @@ namespace E_Commerce_System
            
         }
 
+        //case 9
+        public static void FilterProductsbyCategoryandPriceRange()
+        {
+            foreach(Category c in Context.categories)
+            {
+                Console.WriteLine("Category Details :");
+                Console.WriteLine($"Category ID :{c.categoryId}" +
+                    $"\n Category Name: {c.categoryName}");
+            }
+
+            //user input
+            Console.WriteLine("Enter Category ID :");
+            int catid = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter minimum price :");
+            decimal minprice = decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter maximum price :");
+            decimal maxprice = decimal.Parse(Console.ReadLine());
+
+            // Filter and sort products
+            List<Product> fliterproduct = Context.products.Where(p => p.categoryId == catid && p.price >= minprice && p.price <= maxprice).OrderBy(p=>p.price).ToList();
+         
+            if (fliterproduct.Count == 0)
+            {
+                Console.WriteLine("No products found in this category and price range.");
+                return;
+            }
+
+
+            //Diplay Filter Result
+            Console.WriteLine("---- Filtered Products ----");
+            foreach(Product p in fliterproduct)
+            {
+                Console.WriteLine($"Product ID : {p.productId}" +
+                    $"\n Product Name : {p.productName}" +
+                    $"\n Product Description : {p.description}" +
+                    $"\n Product Price : {p.price}" +
+                    $"\n Quantity : {p.stockQuantity}");
+                
+            }
+
+        }
 
 
 
@@ -532,6 +576,7 @@ namespace E_Commerce_System
                         ViewAllProducts();
                         break;
                     case 10:
+                        FilterProductsbyCategoryandPriceRange();
                         break;
                     case 11:
                         break;
