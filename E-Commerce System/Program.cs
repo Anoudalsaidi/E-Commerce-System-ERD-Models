@@ -1,4 +1,5 @@
 ﻿using E_Commerce_System.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Identity.Client;
 using System.Diagnostics;
@@ -511,12 +512,55 @@ namespace E_Commerce_System
 
         }
 
+        //case 10
+        public static void GetCategorywithAllProducts()
+        {
+
+            Console.WriteLine("Enter Category ID:");
+            int catID = int.Parse(Console.ReadLine());
+
+            //load Category with product
+            Category categories = Context.categories.Include(c => c.products).FirstOrDefault(c => c.categoryId == catID);
+
+            if (categories == null)
+            {
+                Console.WriteLine("Category Not Found");
+                return;
+            }
+
+            // Display category details
+            Console.WriteLine("---- Category Details ----");
+            Console.WriteLine($"Category Name: {categories.categoryName}");
+            Console.WriteLine($"Description: {categories.description}");
 
 
+            // Display products
+            Console.WriteLine("---- Products ----");
+
+            foreach (Product p in categories.products)
+            {
+                Console.WriteLine("----------------------");
+                Console.WriteLine($"Product ID: {p.productId}");
+                Console.WriteLine($"Product Name: {p.productName}");
+                Console.WriteLine($"Price: {p.price}");
+            }
+
+        }
 
 
+        //case 11
+        public static void ViewOrderHistorywithFullDetails() 
+        {
+        
+        }
 
 
+        //case 12
+        public static void ProductSummaryReport()
+
+        {
+
+        }
 
 
 
@@ -531,17 +575,18 @@ namespace E_Commerce_System
                 Console.WriteLine("Welcome To E_Commerce_System\n");
                 Console.WriteLine("choose an option :");
                 Console.WriteLine("1- Register a New User");
-                Console.WriteLine("2- Add a New Product to a Category ");
-                Console.WriteLine("3- Place an Order ");
-                Console.WriteLine("4- Write a Product Review");
-                Console.WriteLine("5- Update Product Price and Availability");
-                Console.WriteLine("6- Cancel an Order ");
-                Console.WriteLine("7- Delete a Review ");
-                Console.WriteLine("8- View All Products  ");
-                Console.WriteLine("9- Filter Products by Category and Price Range ");
-                Console.WriteLine("10- Get Category with All Its Products ");
-                Console.WriteLine("11- View Order History with Full Detail ");
-                Console.WriteLine("12- Product Summary Report");
+                Console.WriteLine("2- Add Category");
+                Console.WriteLine("3- Add a New Product to a Category ");
+                Console.WriteLine("4- Place an Order ");
+                Console.WriteLine("5- Write a Product Review");
+                Console.WriteLine("6- Update Product Price and Availability");
+                Console.WriteLine("7- Cancel an Order ");
+                Console.WriteLine("8- Delete a Review ");
+                Console.WriteLine("9- View All Products  ");
+                Console.WriteLine("10- Filter Products by Category and Price Range ");
+                Console.WriteLine("11- Get Category with All Its Products ");
+                Console.WriteLine("12- View Order History with Full Detail ");
+                Console.WriteLine("13- Product Summary Report");
                 Console.WriteLine("0- Exit");
 
 
@@ -579,8 +624,13 @@ namespace E_Commerce_System
                         FilterProductsbyCategoryandPriceRange();
                         break;
                     case 11:
+                        GetCategorywithAllProducts();
                         break;
                     case 12:
+                        ViewOrderHistorywithFullDetails();
+                        break;
+                    case 13:
+                        ProductSummaryReport();
                         break;
                     case 0:
                         flag = true;
