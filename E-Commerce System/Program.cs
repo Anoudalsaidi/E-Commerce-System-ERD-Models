@@ -1,5 +1,7 @@
 ﻿using E_Commerce_System.Models;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Identity.Client;
+using System.Globalization;
 
 namespace E_Commerce_System
 {
@@ -167,26 +169,115 @@ namespace E_Commerce_System
 
             if(selectuserid == null)
             {
-                Console.WriteLine("this user ID No match ");
+                Console.WriteLine(" No match with any User ID");
                 return;
             }
 
+         
+    
 
             Console.WriteLine("select mathed Payment :");
             Console.WriteLine("A- CreditCard");
             Console.WriteLine("B- DebitCard");
             Console.WriteLine("C- PayPal");
             Console.WriteLine("D- Cash");
-            string option = Console.ReadLine();
+            string optionpayment = Console.ReadLine();
 
             Order orderuser = new Order
             {
                 userId = userid,
                 orderDate = DateTime.Now,
-                totalAmount = orderuser.totalAmount,
+                totalAmount = 0,
+                status="pending",
+                shippingAddress=address,
+                paymentMethod=optionpayment
 
             };
-        }
+            Context.orders.Add(orderuser);
+            Context.SaveChanges();
+            Console.WriteLine($"Order Added successfully with ID: {orderuser.orderId}");
+
+            //Add multiple products
+            decimal totalamount = 0;
+
+            bool addmoreproduct = true;
+            while (addmoreproduct == true)
+            {
+                //inter product ID & Quantity
+
+                Console.WriteLine("Enter product ID :");
+                int productid = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("enter Quantity :");
+                int quantity = int.Parse(Console.ReadLine());
+
+                //check if available or not
+                Product checkproduct = Context.products.FirstOrDefault(p => p.productId == productid);
+                if(checkproduct == null)
+                {
+                    Console.WriteLine("no product found");
+                    return;
+                }
+
+                //check if Quantity enough 
+                if(checkproduct.stockQuantity < quantity)
+                {
+                    Console.WriteLine("Quantity Not Enough ");
+                    return;
+                } 
+              
+
+                Console.WriteLine("Do you want add more ?? (y/n)");
+                string answer = Console.ReadLine();
+
+                if(answer != "y")
+                {
+                    addmoreproduct = false;
+                 
+                }
+
+
+
+
+
+
+                //copy product  price to order Detail
+
+                //filter product id
+                Product searchproductID = Context.products.FirstOrDefault(p => p.productId == order.productId);
+
+    
+                //-----------------------------------------------------
+
+
+                //after order add total amount
+             
+                totalamount += searchproductID.price * quantity;
+
+                Order addtotal = new Order();
+                addtotal.totalAmount = totalamount;
+                Context.SaveChanges();
+
+                //Decrement stockQuantity on each product
+
+                searchproductID.stockQuantity -= quantity;
+
+                //add order
+                OrderDetail userorderdetail = new OrderDetail()
+                {
+                    orderId=orderuser.orderId,
+                    productId=searchproductID.productId,
+                    Quantity=quantity,
+                    unitPrice=searchproductID.price
+                };
+                Context.orderDetails.Add(userorderdetail);
+
+            }
+
+            orderuser.totalAmount = totalamount;
+            Context.SaveChanges();
+
+            Console.WriteLine(" Order placed successfully");
 
 
 
@@ -197,13 +288,84 @@ namespace E_Commerce_System
 
 
 
-        static void Main(string[] args)
+            static void Main(string[] args)
         {
 
-            Console.WriteLine("E_Commerce_System");
+            bool flag = false;
+            while (flag == false)
+            {
+                Console.WriteLine("Welcome To E_Commerce_System\n");
+                Console.WriteLine("choose an option :");
+                Console.WriteLine("1- Register a New User");
+                Console.WriteLine("2- Add a New Product to a Category ");
+                Console.WriteLine("3- Place an Order ");
+                Console.WriteLine("4- Write a Product Review");
+                Console.WriteLine("5- Update Product Price and Availability");
+                Console.WriteLine("6- Cancel an Order ");
+                Console.WriteLine("7- Delete a Review ");
+                Console.WriteLine("8- View All Products  ");
+                Console.WriteLine("9- Filter Products by Category and Price Range ");
+                Console.WriteLine("10- Get Category with All Its Products ");
+                Console.WriteLine("11- View Order History with Full Detail ");
+                Console.WriteLine("12- Product Summary Report");
+                Console.WriteLine("0- Exit");
 
-           
+
+                int option = int.Parse(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        RegisterNewUser();
+                break;
+                    case 2:
+                        AddCategory();
+                        break;
+                    case 3:
+                        AddNewProducttoCategory();
+                        break;
+                    case 4:
+                        PlaceOrder();
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
+                        break;
+                    case 0:
+                        flag = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalied Input");
+                        break;
+
+
+
+                }
+
             
+
+
+
+            Console.WriteLine("press any key to Continue...");
+            Console.ReadKey();
+            Console.Clear();
+
+
+
         }
+
+
+    } 
     }
 }
