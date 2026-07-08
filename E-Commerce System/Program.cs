@@ -374,19 +374,52 @@ namespace E_Commerce_System
            
             Context.SaveChanges();
             Console.WriteLine("Product Updated successfully ");
-
-
-
-            
-
-            //foreach(OrderDetail o in Context.orderDetails)
-            //{
-            //    Console.WriteLine("Order Details : ");
-            //    Console.WriteLine($"o");
-            //}
         }
 
+        //case 6
+        public static void CancelOrder()
+        {
+            Console.WriteLine("Enter Order ID :");
+            int orderid = int.Parse(Console.ReadLine());
 
+            Order checkorder = Context.orders.FirstOrDefault(o => o.orderId == orderid );
+
+            if(checkorder == null)
+            {
+                Console.WriteLine("Order ID Not Found");
+                return;
+            }
+
+            if (checkorder.status == "cancelled")
+            {
+                Console.WriteLine("Oreder already cancelled");
+                return;
+            }
+
+         
+            //display order detail
+            List<OrderDetail> checkorderdetial = Context.orderDetails.Where(d => d.OrderDetailID == orderid).ToList();
+
+            //Restor Stock
+            foreach(OrderDetail o in Context.orderDetails)
+            {
+                Product searchproduct = Context.products.FirstOrDefault(p => p.productId == o.productId);
+            
+             if(searchproduct != null)
+                {
+                    searchproduct.stockQuantity += o.Quantity;
+                }
+            }
+
+            //chane status
+            checkorder.status = "cancelled";
+            Context.SaveChanges();
+
+
+            Console.WriteLine("Order cancelled successfully");
+
+
+        }
 
 
 
@@ -437,6 +470,7 @@ namespace E_Commerce_System
                         UpdateProductPriceandAvailability();
                         break;
                     case 7:
+                        CancelOrder();
                         break;
                     case 8:
                         break;
