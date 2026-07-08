@@ -163,18 +163,18 @@ namespace E_Commerce_System
 
             Console.WriteLine("Enter user ID :");
             int userid = int.Parse(Console.ReadLine());
-           
+
             //check input 
             User selectuserid = Context.users.FirstOrDefault(u => u.userId == userid);
 
-            if(selectuserid == null)
+            if (selectuserid == null)
             {
                 Console.WriteLine(" No match with any User ID");
                 return;
             }
 
-         
-    
+
+
 
             Console.WriteLine("select mathed Payment :");
             Console.WriteLine("A- CreditCard");
@@ -188,9 +188,9 @@ namespace E_Commerce_System
                 userId = userid,
                 orderDate = DateTime.Now,
                 totalAmount = 0,
-                status="pending",
-                shippingAddress=address,
-                paymentMethod=optionpayment
+                status = "pending",
+                shippingAddress = address,
+                paymentMethod = optionpayment
 
             };
             Context.orders.Add(orderuser);
@@ -212,75 +212,59 @@ namespace E_Commerce_System
                 int quantity = int.Parse(Console.ReadLine());
 
                 //check if available or not
-                Product checkproduct = Context.products.FirstOrDefault(p => p.productId == productid);
-                if(checkproduct == null)
+                Product checkproducts = Context.products.FirstOrDefault(p => p.productId == productid);
+                
+                if (checkproducts == null)
                 {
                     Console.WriteLine("no product found");
                     return;
                 }
 
                 //check if Quantity enough 
-                if(checkproduct.stockQuantity < quantity)
+                if (checkproducts.stockQuantity < quantity)
                 {
                     Console.WriteLine("Quantity Not Enough ");
                     return;
-                } 
-              
-
-                Console.WriteLine("Do you want add more ?? (y/n)");
-                string answer = Console.ReadLine();
-
-                if(answer != "y")
-                {
-                    addmoreproduct = false;
-                 
                 }
 
 
 
-
-
-
-                //copy product  price to order Detail
-
-                //filter product id
-                Product searchproductID = Context.products.FirstOrDefault(p => p.productId == order.productId);
-
-    
-                //-----------------------------------------------------
-
-
                 //after order add total amount
-             
-                totalamount += searchproductID.price * quantity;
 
-                Order addtotal = new Order();
-                addtotal.totalAmount = totalamount;
-                Context.SaveChanges();
+                totalamount += checkproducts.price * quantity;
 
                 //Decrement stockQuantity on each product
 
-                searchproductID.stockQuantity -= quantity;
+                checkproducts.stockQuantity -= quantity;
 
                 //add order
                 OrderDetail userorderdetail = new OrderDetail()
                 {
-                    orderId=orderuser.orderId,
-                    productId=searchproductID.productId,
-                    Quantity=quantity,
-                    unitPrice=searchproductID.price
+                    orderId = orderuser.orderId,
+                    productId = checkproducts.productId,
+                    Quantity = quantity,
+                    unitPrice = checkproducts.price
                 };
                 Context.orderDetails.Add(userorderdetail);
 
+                Console.WriteLine("Do you want add more ?? (y/n)");
+                string answer = Console.ReadLine();
+
+                if (answer != "y")
+                {
+                    addmoreproduct = false;
+
+                }
             }
 
             orderuser.totalAmount = totalamount;
             Context.SaveChanges();
-
+            Console.WriteLine($"Order ID: {orderuser.orderId}");
+            Console.WriteLine($"Total Amount : {orderuser.totalAmount}");
             Console.WriteLine(" Order placed successfully");
 
 
-
+        }
 
 
 
