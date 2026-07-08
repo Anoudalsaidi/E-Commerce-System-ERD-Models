@@ -445,6 +445,37 @@ namespace E_Commerce_System
 
         }
 
+        //case 7
+        public static void ViewAllProducts()
+        {
+            List<Product> allproduct = Context.products.ToList();
+            Console.WriteLine("product's details :\n ");
+
+            foreach (Product p in Context.products)
+            {
+             
+                Console.WriteLine("product's details :");
+                Console.WriteLine("-----------------");
+                Console.WriteLine($"Product ID :{p.productId}" +
+                    $"\n product name: {p.productName}" +
+                    $"\n description : {p.description}" +
+                    $"\n price {p.price}" +
+                    $"\n stock Quantity{p.stockQuantity} ");
+
+            }
+           
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
         static void Main(string[] args)
@@ -498,6 +529,7 @@ namespace E_Commerce_System
                         DeleteReview();
                         break;
                     case 9:
+                        ViewAllProducts();
                         break;
                     case 10:
                         break;
