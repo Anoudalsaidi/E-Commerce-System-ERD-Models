@@ -46,10 +46,10 @@ E-Commerce-System
 
 ### Entity Relationship Diagram (ERD)
 
-> Add your ERD diagram below.
+
 
 ```markdown
-![ERD Diagram](images/ERD-Diagram.png)
+![ERD Diagram](https://github.com/Anoudalsaidi/E-Commerce-System-ERD-Models/pull/2/changes/f728bc8cd0c87462b6de7467d7903ac9b21e1b40)
 ```
 
 ---
