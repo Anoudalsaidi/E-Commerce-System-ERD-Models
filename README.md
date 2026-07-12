@@ -49,7 +49,7 @@ E-Commerce-System
 
 
 ```markdown
-![ERD Diagram](https://raw.githubusercontent.com/Anoudalsaidi/E-Commerce-System-ERD-Models/<branch-name>/images/ERD-Diagram.png)
+![ERD Diagram](https://github.com/Anoudalsaidi/E-Commerce-System-ERD-Models/blob/master/ERD-Diagram.png)
 ```
 
 ---
