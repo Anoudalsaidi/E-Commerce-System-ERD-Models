@@ -1,6 +1,10 @@
 # 🛒 E-Commerce System – ERD & Models
 
-**.NET | C# | Entity Framework Core | SQL Server | Database Design**
+![.NET](https://img.shields.io/badge/.NET-8.0-purple)
+![C#](https://img.shields.io/badge/C%23-Language-blue)
+![Entity Framework Core](https://img.shields.io/badge/EF_Core-ORM-green)
+![SQL Server](https://img.shields.io/badge/SQL_Server-Database-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 A database modeling project for an **E-Commerce System** that demonstrates the design and implementation of entities, relationships, and Entity Framework Core models following relational database principles.
 
