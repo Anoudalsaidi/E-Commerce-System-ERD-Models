@@ -1,4 +1,8 @@
 # 🛒 E-Commerce System – ERD & Models
++-----------------------------------------+
+|        E-Commerce Database Design       |
+|      Entity Framework Core Project      |
++-----------------------------------------+
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-purple)
 ![C#](https://img.shields.io/badge/C%23-Language-blue)
